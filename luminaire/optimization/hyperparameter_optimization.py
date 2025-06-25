@@ -45,7 +45,7 @@ class HyperparameterOptimization(object):
         self.anomaly_intensity_list = [-0.6, -0.3, -0.1, 0.1, 0.3, 0.6]
 
         scoring_length_dict = {
-            'H': 36, 'D': 10, 'W': 8, 'M': 6,
+            'H': 36, 'D': 10, 'W': 8, 'M': 6, 'T': 2160,
         }
         self.scoring_length = scoring_length or (scoring_length_dict.get(freq)
                                                  if freq in scoring_length_dict.keys() else 30)
