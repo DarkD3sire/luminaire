@@ -67,6 +67,7 @@ class DataExploration(object):
             'D': 21,
             'W': 16, 'W-SUN': 16, 'W-MON': 16, 'W-TUE': 16, 'W-WED': 16, 'W-THU': 16, 'W-FRI': 16, 'W-SAT': 16,
             'M': 24, 'MS': 24,
+            'T': 60 * 24,
         }
         self.min_ts_length = min_ts_length or min_ts_length_dict.get(freq)
         # Assigning a default max_ts_length if not provided by the user.
@@ -76,6 +77,7 @@ class DataExploration(object):
             'D': 365 * 3,
             'W': 100, 'W-SUN': 100, 'W-MON': 100, 'W-TUE': 100, 'W-WED': 100, 'W-THU': 100, 'W-FRI': 100, 'W-SAT': 100,
             'M': 120, 'MS': 120,
+            'T': 60 * 24 * 30,
         }
         self.max_ts_length = max_ts_length or max_ts_length_dict.get(freq)
 
@@ -115,6 +117,7 @@ class DataExploration(object):
             'D': 10,
             'W': 12, 'W-SUN': 12, 'W-MON': 12, 'W-TUE': 12, 'W-WED': 12, 'W-THU': 12, 'W-FRI': 12, 'W-SAT': 12,
             'M': 24, 'MS': 24,
+            'T': 60 * 6,
         }
         self.min_changepoint_padding_length = min_changepoint_padding_length or min_changepoint_padding_length_dict.get(
             freq)
@@ -122,10 +125,11 @@ class DataExploration(object):
         tc_window_len_dict = {
             'H': 24,
             'D': 7,
-            'W':4
+            'W':4,
+            'T': 60,
         }
 
-        self.tc_window_length = tc_window_len_dict.get(freq) if freq in ['H', 'D', 'W'] else None
+        self.tc_window_length = tc_window_len_dict.get(freq) if freq in ['H', 'D', 'W','T'] else None
 
         self.tc_max_window_length = 24
 
