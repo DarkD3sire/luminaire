@@ -98,6 +98,7 @@ class LADStructuralModel(BaseModel):
             'D': 10,
             'W': 8, 'W-SUN': 8, 'W-MON': 8, 'W-TUE': 8, 'W-WED': 8, 'W-THU': 8, 'W-FRI': 8, 'W-SAT': 8,
             'M': 24, 'MS': 24,
+            'T': 1440,
         }
         self.max_scoring_length = max_scoring_length_dict.get(freq)
 
@@ -106,6 +107,7 @@ class LADStructuralModel(BaseModel):
             'D': 7 * 4,
             'W': 12, 'W-SUN': 12, 'W-MON': 12, 'W-TUE': 12, 'W-WED': 12, 'W-THU': 12, 'W-FRI': 12, 'W-SAT': 12,
             'M': 24, 'MS': 24,
+            'T': 1440 * 2,
         }
         self._fit_diagnostic_lag = fit_diagnostic_lag_dict.get(freq)
 
