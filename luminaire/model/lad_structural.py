@@ -338,6 +338,12 @@ class LADStructuralModel(BaseModel):
             complete_cycle = int(len(endog) / 24)
             endog = endog[- (complete_cycle * 24):]
             endog_smoothed = endog_smoothed[- (complete_cycle * 24):]
+        elif freq == 'T':
+            # Added for per-minute frequency
+            complete_cycle = int(len(endog) / 1440) # 1440 minutes in a day
+            if complete_cycle > 0:
+                endog = endog[- (complete_cycle * 1440):]
+                endog_smoothed = endog_smoothed[- (complete_cycle * 1440):]
 
         exog = exog.iloc[-len(endog):] if exog is not None else None
 
