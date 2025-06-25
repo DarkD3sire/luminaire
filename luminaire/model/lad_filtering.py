@@ -72,6 +72,7 @@ class LADFilteringModel(BaseModel):
         'D': 10,
         'W': 8, 'W-SUN': 8, 'W-MON': 8, 'W-TUE': 8, 'W-WED': 8, 'W-THU': 8, 'W-FRI': 8, 'W-SAT': 8,
         'M': 24, 'MS': 24,
+        'T': 60,
     }
 
     def __init__(self,
